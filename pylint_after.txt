@@ -1,0 +1,7 @@
+************* Module app
+app.py:32:0: C0304: Final newline missing (missing-final-newline)
+************* Module model
+model.py:26:0: C0304: Final newline missing (missing-final-newline)
+
+------------------------------------------------------------------
+Your code has been rated at 9.31/10 (previous run: 7.33/10, +1.98)

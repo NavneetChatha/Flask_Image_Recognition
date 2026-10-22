@@ -19,12 +19,10 @@ def main():
 def predict_image_file():
     """Predict the digit in an uploaded image and show the result."""
     try:
-        if request.method == 'POST':
-            img = preprocess_img(request.files['file'].stream)
-            pred = predict_result(img)
-            return render_template("result.html", predictions=str(pred))
-
-    except:
+        img = preprocess_img(request.files['file'].stream)
+        pred = predict_result(img)
+        return render_template("result.html", predictions=str(pred))
+    except Exception:  # pylint: disable=broad-exception-caught
         error = "File cannot be processed."
         return render_template("result.html", err=error)
 

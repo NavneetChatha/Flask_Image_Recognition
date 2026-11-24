@@ -1,10 +1,15 @@
 """Flask web app for recognising hand-sign digits."""
 # Importing required libs
+import os
+
 from flask import Flask, render_template, request
+from flask_wtf.csrf import CSRFProtect
 from model import preprocess_img, predict_result
 
 # Instantiating flask app
 app = Flask(__name__)
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY") or os.urandom(32).hex()
+csrf = CSRFProtect(app)
 
 
 # Home route

@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.10"
       - name: Install dependencies
-        run: pip install -r requirements.txt pytest pytest-cov
+        run: pip install -r requirements.txt pytest pytest-cov "werkzeug==2.2.2"
       - name: Run tests with coverage
         run: pytest --cov=. --cov-report=xml
       - name: Cache SonarQube packages
